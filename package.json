@@ -4,17 +4,38 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "webpack serve --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "react-svg-loader": "^3.0.3",
+    "sass": "^1.52.1",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0",
+    "webpack-merge": "^5.8.0"
+  },
   "dependencies": {
-    "next": "^12.1.6",
+    "@reduxjs/toolkit": "^1.8.1",
+    "lodash-es": "^4.17.21",
+    "prop-types": "^15.8.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.3.0",
+    "react-simple-image-slider": "^2.4.1",
+    "redux": "^4.2.0",
+    "redux-saga": "^1.1.3"
   }
 }
