@@ -2,7 +2,6 @@
   position: relative;
   margin: 48px 94px 0 94px;
   height: 59px;
-  border: 1px solid red;
 }
 
 .appheader_hr {
@@ -12,4 +11,26 @@
   left: -14px;
   height: 1px;
   background-color: #d8d8d8;
+}
+
+.appheader_buttons {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 30px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+
+    &:hover {
+      color: red;
+    }
+  }
 }

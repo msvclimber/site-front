@@ -1,11 +1,23 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+import SearchIcon from '../../assets/icons/search.svg';
+import UserIcon from '../../assets/icons/user.svg';
 
 import './styles.scss';
 
 const AppHeader = () => {
     return (<div className="appheader_root">Hello world
-        <div className='appheader_hr' /></div>)
+        <div className="appheader_buttons">
+            <Link to='/'>Каталог</Link>
+            <Link to='/auth'>Сообщения</Link>
+            <Link to='/auth'>Любимые товары</Link>
+            <Link to='/list'><SearchIcon width={28} height={28} /></Link>
+            <Link to='/auth'><UserIcon width={28} height={28} /></Link>
+        </div>
+        <div className='appheader_hr' />
+    </div>)
 }
 
 export default AppHeader;

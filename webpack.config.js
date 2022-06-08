@@ -26,7 +26,6 @@ const commonConfig = {
                 test: /\.scss$/i,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
-
             {
                 test: /\.(png|jpe?g|gif|woff2|eot)$/,
                 use: [
@@ -59,6 +58,10 @@ const commonConfig = {
             minify: false,
         }),
     ],
+    devServer: {
+        hot: "only",
+        historyApiFallback: true,
+    },
 };
 
 module.exports = (env) => {
