@@ -52,8 +52,8 @@ const commonConfig = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Ценообразование',
-            // favicon: path.resolve(__dirname, 'src/assets/images/favicon.ico'),
+            title: 'Хоббимаркет',
+            favicon: path.resolve(__dirname, 'src/assets/icons/hobby.svg'),
             template: path.resolve(__dirname, 'template/index.html'),
             minify: false,
         }),

@@ -5,6 +5,13 @@
     border-radius: 8px;
     width: 100%;
   }
+  position: relative;
+
+  &:hover .product_hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .product_item_title {
@@ -20,4 +27,25 @@
   line-height: 26px;
   color: #a18a68;
   margin-top: 10px;
+}
+
+.product_hover {
+  display: none;
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 82.5%;
+  background-color: rgba($color: white, $alpha: 0.6);
+
+  svg {
+    fill: red;
+  }
+}
+
+.product_hover_buttons {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
 }
