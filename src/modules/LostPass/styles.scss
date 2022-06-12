@@ -1,0 +1,36 @@
+.lostpass_root {
+  position: relative;
+  margin: 86px 80px 0 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.auth_lostpass_textfield {
+  width: 100%;
+  margin: 10px 6px 0px 6px;
+
+  & div::before {
+    border-bottom: 1px solid #a18a68;
+  }
+
+  & div::after {
+    border-bottom: 2px solid #a18a68;
+  }
+}
+
+.auth_lostpass_text {
+  color: #707070;
+  font-size: 20px;
+  text-align: center;
+  width: 360px;
+  margin: auto;
+}
+
+.auth_login_buttons_button_getpass {
+  width: 554px;
+  height: 53px;
+  margin: 50px 5px !important;
+  background-color: #a18a68 !important;
+  color: white !important;
+  text-transform: none !important;
+}

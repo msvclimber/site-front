@@ -1,9 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { throttle } from 'lodash-es';
 // import PropTypes from 'prop-types';
 import SimpleImageSlider from "react-simple-image-slider";
 
+import products from '../../data/products';
+
 import AppHeader from '../../modules/AppHeader';
+import AppFooter from '../../modules/AppFooter';
 import ProductList from '../../modules/ProductList';
 import img1 from '../../assets/images/mainslider/1.jpg';
 import img2 from '../../assets/images/mainslider/2.jpg';
@@ -24,6 +27,7 @@ const images = [
 const Main = () => {
     const container = useRef(null);
     const [width, setWidth] = useState(1000);
+    console.log(images)
 
     useEffect(() => {
         const handleResize = () => setWidth(container.current?.offsetWidth - 160 ?? 0);
@@ -36,6 +40,9 @@ const Main = () => {
         };
     }, []);
 
+    const clothingShoes = useMemo(() => products.filter(product => product.category === 'clothingShoes'), [products]);
+    const jewelryAccessories = useMemo(() => products.filter(product => product.category === 'jewelryAccessories'), [products]);
+
     return (<div ref={container}>
         <AppHeader />
         <SimpleImageSlider
@@ -47,8 +54,9 @@ const Main = () => {
             autoPlay
             style={{ position: 'relative', margin: '40px 80px 14px 80px', borderRadius: 23 }}
         />
-        <ProductList title="Одежда и обувь" />
-        <ProductList title="Украшения и аксессуары" />
+        <ProductList title="Одежда и обувь" products={clothingShoes} />
+        <ProductList title="Украшения и аксессуары" products={jewelryAccessories} />
+        <AppFooter />
     </div>)
 }
 

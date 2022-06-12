@@ -6,6 +6,8 @@ import ProductLiist from '../ProductList';
 import ProductDetail from '../ProductDetail';
 import Main from '../Main';
 import Auth from '../Auth';
+import LostPass from '../LostPass';
+import Work from '../Work';
 
 const isAllowedAccessToPriceRules = true;
 
@@ -31,6 +33,16 @@ const App = () => (
         exact
         path="/auth"
         element={<PrivateRoute component={Auth} isAllowed={isAllowedAccessToPriceRules} />}
+      />
+      <Route
+        exact
+        path="/lostpass"
+        element={<PrivateRoute component={LostPass} isAllowed={isAllowedAccessToPriceRules} />}
+      />
+      <Route
+        exact
+        path="/work"
+        element={<PrivateRoute component={Work} isAllowed={isAllowedAccessToPriceRules} />}
       />
     </Routes>
   </div>

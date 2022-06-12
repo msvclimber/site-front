@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import LoginStage from './Login';
+// import LostPassStage from './LostPass';
 
 import './styles.scss';
 
 const stages = {
     login: 'login',
-    regBuy: 'regBuy',
-    regSell: 'regSell',
+    signup: 'signup',
 }
 
 const getAuthStageComponent = (stage, setStage) => {
+    // console.log(stage)
+    // if (stage === stages.signup) {
+    //     return <LostPassStage />
+    // }
     return <LoginStage changeStage={setStage} />
 }
 

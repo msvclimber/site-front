@@ -1,0 +1,23 @@
+.product_item_root {
+  display: inline-block;
+  width: 22%;
+  img {
+    border-radius: 8px;
+    width: 100%;
+  }
+}
+
+.product_item_title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  margin-top: 10px;
+}
+
+.product_item_price {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  color: #a18a68;
+  margin-top: 10px;
+}
