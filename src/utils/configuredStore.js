@@ -5,13 +5,13 @@ import {
 } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import reducers from '../store';
+import rootReducer from '../store';
 
 import rootSaga from '../sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const combinedReducers = combineReducers(reducers);
+const combinedReducers = combineReducers(rootReducer);
 
 const appliedMiddlewares = applyMiddleware(sagaMiddleware);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,11 @@ import LogoIcon from '../../assets/icons/logo.svg';
 
 import './styles.scss';
 
-const AppHeader = () => {
+const AppHeader = ({ fetchProducts }) => {
+    useLayoutEffect(() => {
+        fetchProducts();
+    }, []);
+
     return (<div className="appheader_root">
         <Link to='/'><LogoIcon /></Link>
         <div className="appheader_buttons">

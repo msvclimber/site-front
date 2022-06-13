@@ -1,9 +1,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { throttle } from 'lodash-es';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import SimpleImageSlider from "react-simple-image-slider";
-
-import products from '../../data/products';
 
 import AppHeader from '../../modules/AppHeader';
 import AppFooter from '../../modules/AppFooter';
@@ -24,7 +22,7 @@ const images = [
     { url: img5 },
 ];
 
-const Main = () => {
+const Main = ({ products, isProductsLoading }) => {
     const container = useRef(null);
     const [width, setWidth] = useState(1000);
     console.log(images)
@@ -59,5 +57,10 @@ const Main = () => {
         <AppFooter />
     </div>)
 }
+
+Main.propTypes = {
+    products: PropTypes.instanceOf(Array).isRequired,
+    isProductsLoading: PropTypes.bool.isRequired,
+};
 
 export default Main;
