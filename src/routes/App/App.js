@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import PrivateRoute from '../../components/PrivateRoute';
 import ProductList from '../ProductList';
 import FavoriteList from '../FavoriteList';
-import ProductDetail from '../ProductDetail';
 import Main from '../Main';
 import Auth from '../Auth';
 import Messages from '../Messages';
@@ -31,11 +30,6 @@ const App = () => (
       />
       <Route
         exact
-        path="/product-detail"
-        element={<PrivateRoute component={ProductDetail} isAllowed={isAllowedAccessToPriceRules} />}
-      />
-      <Route
-        exact
         path="/auth"
         element={<PrivateRoute component={Auth} isAllowed={isAllowedAccessToPriceRules} />}
       />
@@ -56,7 +50,7 @@ const App = () => (
       />
       <Route
         exact
-        path="/detail"
+        path="/detail/:productId"
         element={<PrivateRoute component={DetailProduct} isAllowed={isAllowedAccessToPriceRules} />}
       />
       <Route

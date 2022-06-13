@@ -1,20 +1,17 @@
 import { connect } from 'react-redux';
 
 import {
-    fetchProducts,
-} from '../../store/products/actions';
-import {
     getProductList,
+    getIsProductListLoading,
 } from '../../store/products/selectors';
 
-import AppHeader from './AppHeader';
+import DetailProduct from './DetailProduct';
 
 const mapStateToProps = state => ({
     products: getProductList(state),
+    isProductsLoading: getIsProductListLoading(state),
 });
-const mapDispatchToProps = { fetchProducts };
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(AppHeader);
+    mapStateToProps
+)(DetailProduct);

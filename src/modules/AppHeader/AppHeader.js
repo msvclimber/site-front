@@ -8,9 +8,11 @@ import LogoIcon from '../../assets/icons/logo.svg';
 
 import './styles.scss';
 
-const AppHeader = ({ fetchProducts }) => {
+const AppHeader = ({ fetchProducts, products }) => {
     useLayoutEffect(() => {
-        fetchProducts();
+        if (products.length === 0) {
+            fetchProducts();
+        }
     }, []);
 
     return (<div className="appheader_root">

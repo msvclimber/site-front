@@ -1,3 +1,3 @@
-import DetailProduct from './DetailProduct';
+import DetailProduct from './DetailProductContainer';
 
 export default DetailProduct;
