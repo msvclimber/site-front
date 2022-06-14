@@ -13,6 +13,8 @@ import MyShop from '../MyShop';
 import User from '../User';
 import Work from '../Work';
 
+import './styles.scss';
+
 const isAllowedAccessToPriceRules = true;
 
 const App = () => (

@@ -1,4 +1,4 @@
-.product_item_root {
+.product_root {
   display: inline-block;
   width: 22%;
   img {
@@ -14,14 +14,14 @@
   }
 }
 
-.product_item_title {
+.product_title {
   font-size: 20px;
   font-weight: 400;
   line-height: 26px;
   margin-top: 10px;
 }
 
-.product_item_price {
+.product_price {
   font-size: 20px;
   font-weight: 600;
   line-height: 26px;

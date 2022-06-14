@@ -12,10 +12,10 @@ import './styles.scss';
 const Product = ({ product }) => {
 
     return (
-        <div className='product_item_root'>
+        <div className='product_root'>
             <img src={require(`../../assets/images/products/${product.imgName}_min.jpg`).default} />
-            <div className="product_item_title">{product.title}</div>
-            <div className="product_item_price">{`₽ ${product.price}`}</div>
+            <div className="product_title">{product.title}</div>
+            <div className="product_price">{`₽ ${product.price}`}</div>
             <div className="product_hover">
                 <div className="product_hover_buttons">
                     <Link to='/messages'><BasketIcon /></Link>

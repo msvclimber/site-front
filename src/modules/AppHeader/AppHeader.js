@@ -21,7 +21,8 @@ const AppHeader = ({ fetchProducts, products }) => {
             <Link to='/list'>Каталог</Link>
             <Link to='/messages'>Сообщения</Link>
             <Link to='/favorites'>Любимые товары</Link>
-            <Link to='/myshop'><SearchIcon width={28} height={28} /></Link>
+            {/* <Link to='/myshop'><SearchIcon width={28} height={28} /></Link> */}
+            <Link to='/myshop'>Мой магазин</Link>
             <Link to='/user'><UserIcon width={28} height={28} /></Link>
         </div>
         <div className='appheader_hr' />
