@@ -17,7 +17,7 @@ const AppHeader = ({ fetchProducts, products, user }) => {
 
     return (<div className="appheader_root">
         <Link to='/'><LogoIcon /></Link>
-        <div className="appheader_buttons">
+        <div className={user && user.shopId ? "appheader_buttons_650" : "appheader_buttons_500"}>
             <Link to='/list'>Каталог</Link>
             <Link to={user ? '/messages' : '/auth/messages'}>Сообщения</Link>
             <Link to={user ? '/favorites' : '/auth/favorites'}>Любимые товары</Link>

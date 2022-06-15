@@ -9,10 +9,10 @@ import EyeIcon from '../../assets/icons/eye.svg';
 
 import './styles.scss';
 
-const Product = ({ product }) => {
+const Product = ({ product, width, marginBottom }) => {
 
     return (
-        <div className='product_root'>
+        <div className='product_root' style={{ width, marginBottom }}>
             <img src={require(`../../assets/images/products/${product.imgName}_min.jpg`).default} />
             <div className="product_title">{product.title}</div>
             <div className="product_price">{`₽ ${product.price}`}</div>
@@ -29,6 +29,12 @@ const Product = ({ product }) => {
 
 Product.propTypes = {
     product: PropTypes.instanceOf(Object).isRequired,
+    width: PropTypes.string.isRequired,
+    marginBottom: PropTypes.string,
+}
+
+Product.defaultProps = {
+    marginBottom: '0px',
 }
 
 export default Product;

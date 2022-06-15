@@ -3,11 +3,12 @@ import React from 'react';
 
 import AppHeader from '../../modules/AppHeader';
 import AppFooter from '../../modules/AppFooter';
+import Catalog from '../../modules/Catalog';
 
 const ProductList = () => {
     return (<div>
         <AppHeader />
-        Продукты
+        <Catalog />
         <AppFooter isBottomAbsolute />
     </div>)
 }

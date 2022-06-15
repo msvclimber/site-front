@@ -13,12 +13,34 @@
   background-color: #d8d8d8;
 }
 
-.appheader_buttons {
+.appheader_buttons_500 {
   position: absolute;
   right: 0;
   top: 0;
   height: 30px;
   width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.appheader_buttons_650 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 30px;
+  width: 600px;
   display: flex;
   align-items: center;
   justify-content: space-between;

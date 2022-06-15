@@ -15,60 +15,58 @@ import Work from '../Work';
 
 import './styles.scss';
 
-const isAllowedAccessToPriceRules = true;
-
 const App = () => (
   <div>
     <Routes>
       <Route
         exact
         path="/"
-        element={<PrivateRoute component={Main} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={Main} />}
       />
       <Route
         exact
         path="/list"
-        element={<PrivateRoute component={ProductList} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={ProductList} />}
       />
       <Route
         exact
         path="/auth/:redirectPage"
-        element={<PrivateRoute component={Auth} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={Auth} />}
       />
       <Route
         exact
         path="/lostpass"
-        element={<PrivateRoute component={LostPass} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={LostPass} />}
       />
       <Route
         exact
         path="/favorites"
-        element={<PrivateRoute component={FavoriteList} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={FavoriteList} isLogin />}
       />
       <Route
         exact
         path="/messages"
-        element={<PrivateRoute component={Messages} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={Messages} isLogin />}
       />
       <Route
         exact
         path="/detail/:productId"
-        element={<PrivateRoute component={DetailProduct} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={DetailProduct} />}
       />
       <Route
         exact
         path="/myshop"
-        element={<PrivateRoute component={MyShop} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={MyShop} isLogin />}
       />
       <Route
         exact
         path="/user/:id"
-        element={<PrivateRoute component={User} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={User} isLogin />}
       />
       <Route
         exact
         path="/work"
-        element={<PrivateRoute component={Work} isAllowed={isAllowedAccessToPriceRules} />}
+        element={<PrivateRoute component={Work} />}
       />
     </Routes>
   </div>
