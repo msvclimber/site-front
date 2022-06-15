@@ -12,7 +12,7 @@ import fetchProductsRequest from './fetchers';
 function* fetchProducts() {
   try {
     const { data, error } = yield call(apiCall, fetchProductsRequest, {});
-    console.log('FETCH')
+
     if (data) {
       const { result } = data;
       yield put(fetchProductsSuccess(result));

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import history from '../../utils/history';
 
 const PrivateRoute = ({
   component: Component,
@@ -9,8 +8,6 @@ const PrivateRoute = ({
   if (isAllowed) {
     return <Component />
   }
-
-  history.push('/auth');
 };
 
 PrivateRoute.propTypes = {

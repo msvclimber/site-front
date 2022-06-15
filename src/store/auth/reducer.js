@@ -1,34 +1,40 @@
 import {
-  FETCH_PRODUCTS,
-  FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_FAIL,
-  CLEAR_PRODUCTS,
+  FETCH_LOGIN,
+  FETCH_LOGIN_SUCCESS,
+  FETCH_LOGIN_FAIL,
+  FETCH_LOGIN_ERROR,
+  CLEAR_LOGIN_ERROR,
 } from './constants';
 
 const initialState = {
-  productList: [],
-  isProductListLoading: false,
+  user: null,
+  isLoging: false,
+  isLoginError: false,
 };
 
 const handlers = {
-  [FETCH_PRODUCTS]: state => ({
+  [FETCH_LOGIN]: state => ({
     ...state,
-    productList: [],
-    isProductListLoading: true,
+    user: null,
+    isLoging: true,
   }),
-  [FETCH_PRODUCTS_SUCCESS]: (state, { productList }) => ({
+  [FETCH_LOGIN_SUCCESS]: (state, { user }) => ({
     ...state,
-    productList,
-    isProductListLoading: false,
+    user,
+    isLoging: false,
   }),
-  [FETCH_PRODUCTS_FAIL]: state => ({
+  [FETCH_LOGIN_FAIL]: state => ({
     ...state,
-    isProductListLoading: false,
+    user: null,
+    isLoging: false,
   }),
-  [CLEAR_PRODUCTS]: state => ({
+  [FETCH_LOGIN_ERROR]: state => ({
     ...state,
-    productList: [],
-    isProductListLoading: false,
+    isLoginError: true,
+  }),
+  [CLEAR_LOGIN_ERROR]: state => ({
+    ...state,
+    isLoginError: false,
   }),
 };
 

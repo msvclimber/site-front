@@ -12,26 +12,26 @@ const stages = {
     signup: 'signup',
 }
 
-const getAuthStageComponent = (stage, setStage) => {
+const getAuthStageComponent = (stage, setStage, redirectPage) => {
     // console.log(stage)
     // if (stage === stages.signup) {
     //     return <LostPassStage />
     // }
-    return <LoginStage changeStage={setStage} />
+    return <LoginStage changeStage={setStage} redirectPage={redirectPage} />
 }
 
-const Auth = ({ title }) => {
+const Auth = ({ redirectPage }) => {
     const [stage, setStage] = useState(stages.login);
 
     return (
         <div className="auth_root">
-            {getAuthStageComponent(stage, setStage)}
+            {getAuthStageComponent(stage, setStage, redirectPage)}
         </div>
     )
 }
 
 Auth.propTypes = {
-    title: PropTypes.string.isRequired,
+    redirectPage: PropTypes.string.isRequired,
 }
 
 export default Auth;

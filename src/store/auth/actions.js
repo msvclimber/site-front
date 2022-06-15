@@ -1,23 +1,30 @@
 import {
-  FETCH_PRODUCTS,
-  FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_FAIL,
-  CLEAR_PRODUCTS,
+  FETCH_LOGIN,
+  FETCH_LOGIN_SUCCESS,
+  FETCH_LOGIN_FAIL,
+  FETCH_LOGIN_ERROR,
+  CLEAR_LOGIN_ERROR,
 } from './constants';
 
-export const fetchProducts = () => ({
-  type: FETCH_PRODUCTS,
+export const fetchLogin = (login, password) => ({
+  type: FETCH_LOGIN,
+  login,
+  password,
 });
 
-export const fetchProductsSuccess = productList => ({
-  type: FETCH_PRODUCTS_SUCCESS,
-  productList,
+export const fetchLoginSuccess = user => ({
+  type: FETCH_LOGIN_SUCCESS,
+  user,
 });
 
-export const fetchProductsFail = () => ({
-  type: FETCH_PRODUCTS_FAIL,
+export const fetchLoginFail = () => ({
+  type: FETCH_LOGIN_FAIL,
 });
 
-export const clearProducts = () => ({
-  type: CLEAR_PRODUCTS,
+export const fetchLoginError = () => ({
+  type: FETCH_LOGIN_ERROR,
+});
+
+export const clearLoginError = () => ({
+  type: CLEAR_LOGIN_ERROR,
 });

@@ -32,7 +32,7 @@ const App = () => (
       />
       <Route
         exact
-        path="/auth"
+        path="/auth/:redirectPage"
         element={<PrivateRoute component={Auth} isAllowed={isAllowedAccessToPriceRules} />}
       />
       <Route
@@ -62,7 +62,7 @@ const App = () => (
       />
       <Route
         exact
-        path="/user"
+        path="/user/:id"
         element={<PrivateRoute component={User} isAllowed={isAllowedAccessToPriceRules} />}
       />
       <Route

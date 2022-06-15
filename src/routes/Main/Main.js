@@ -25,7 +25,6 @@ const images = [
 const Main = ({ products, isProductsLoading }) => {
     const container = useRef(null);
     const [width, setWidth] = useState(1000);
-    console.log(images)
 
     useEffect(() => {
         const handleResize = () => setWidth(container.current?.offsetWidth - 160 ?? 0);

@@ -1,12 +1,11 @@
 import { takeEvery } from 'redux-saga/effects';
 
-import { FETCH_PRODUCTS } from '../../store/auth/constants';
+import { FETCH_LOGIN } from '../../store/auth/constants';
 
-// import { fetchProducts } from './workers';
-const fetchProducts = () => { };
+import fetchLogin from './workers';
 
 const productsSaga = [
-  takeEvery(FETCH_PRODUCTS, fetchProducts),
+  takeEvery(FETCH_LOGIN, fetchLogin),
 ];
 
 export default productsSaga;

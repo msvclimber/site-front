@@ -1,2 +1,3 @@
-export const getProductList = ({ auth }) => auth.productList;
-export const getIsProductListLoading = ({ auth }) => auth.isProductListLoading;
+export const getUser = ({ auth }) => auth.user;
+export const getIsLoging = ({ auth }) => auth.isLoging;
+export const getIsLoginError = ({ auth }) => auth.isLoginError;

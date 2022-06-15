@@ -66,13 +66,24 @@
   }
 }
 
-.auth_login_buttons_button_login {
+.auth_login_buttons_button_login_disabled {
   width: 554px;
   height: 53px;
-  background-color: #a18a68 !important;
   color: white !important;
+  background-color: #dbd3c5 !important;
   margin: 20px 4px 0px 4px !important;
   text-transform: none !important;
+  font-weight: 600;
+}
+
+.auth_login_buttons_button_login_enabled {
+  width: 554px;
+  height: 53px;
+  color: white !important;
+  background-color: #a18a68 !important;
+  margin: 20px 4px 0px 4px !important;
+  text-transform: none !important;
+  font-weight: 600;
 }
 
 .auth_login_buttons_button_lost {
