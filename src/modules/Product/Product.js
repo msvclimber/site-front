@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
+import Modal from '@mui/material/Modal';
 
 import HeartIcon from '../../assets/icons/heart.svg';
 import SelectedHeartIcon from '../../assets/icons/selectedHeart.svg';
@@ -12,6 +14,9 @@ import DeleteIcon from '../../assets/icons/delete.svg';
 import './styles.scss';
 
 const Product = ({ product, width, marginBottom, user, setFavorites, isEdit, deleteProduct }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const handleOpen = () => setIsModalOpen(true);
+    const handleClose = () => setIsModalOpen(false);
 
     return (
         <div className='product_root' style={{ width, marginBottom }}>
@@ -27,10 +32,30 @@ const Product = ({ product, width, marginBottom, user, setFavorites, isEdit, del
             </div> : null}
             {product.sales ? <div className='product_sales'>{`-${product.sales}`}</div> : null}
             {isEdit ? <div className='product_edit'>
-                <div onClick={() => { deleteProduct(product.id) }}><DeleteIcon /></div>
+                <div onClick={handleOpen}><DeleteIcon /></div>
                 <Link style={{ textDecoration: 'none', marginTop: '3px' }} to={`/product/edit/${product.id}`}><div><EditIcon /></div></Link>
             </div> : null
             }
+            <Modal
+                open={isModalOpen}
+                onClose={handleClose}
+            >
+                <div style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    backgroundColor: 'white',
+                    borderRadius: 8,
+                    padding: 20,
+                }}>
+                    <div style={{ fontSize: 26, fintWeight: 600, margin: '0 60px' }}>Удалить выбранный товар?</div>
+                    <div className="product_edit_modal_links">
+                        <div className="product_item_write" onClick={() => { deleteProduct(product.id) }}>Удалить</div>
+                        <div className="product_item_inshop" onClick={handleClose}>Отмена</div>
+                    </div>
+                </div>
+            </Modal>
         </div >
     )
 }

@@ -93,3 +93,33 @@
     cursor: pointer;
   }
 }
+
+.product_edit_modal_links {
+  margin-top: 30px;
+  height: 53px;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+
+  div {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 47%;
+    height: 100%;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  .product_item_write {
+    color: white;
+    background-color: #a18a68;
+  }
+
+  .product_item_inshop {
+    color: black;
+    border: 1px solid black;
+  }
+}
