@@ -9,13 +9,14 @@ import Twitter from '../../assets/icons/twitter.svg';
 import Fb from '../../assets/icons/fb.svg';
 import Instagram from '../../assets/icons/instagram.svg';
 import Mail from '../../assets/icons/mail.svg';
-import Heart from '../../assets/icons/heart.svg';
+import HeartIcon from '../../assets/icons/heart.svg';
+import SelectedHeartIcon from '../../assets/icons/selectedHeart.svg';
 
 import { categoryNames, subCategoryNames } from '../../data/categories';
 
 import './styles.scss';
 
-const ProductItem = ({ product, isProductsLoading }) => {
+const ProductItem = ({ product, isProductsLoading, setFavorites, user }) => {
     if (isProductsLoading) {
         return <div className="g_center_content">
             <CircularProgress />
@@ -44,7 +45,7 @@ const ProductItem = ({ product, isProductsLoading }) => {
                     <Link to='/shop'><div className="product_item_inshop">Перейти в магазин</div></Link>
                 </div>
                 <div className="product_item_socials">
-                    <Link to='/messages'><Heart /></Link>
+                    {user ? user.favorites?.includes(product.id) ? <SelectedHeartIcon onClick={() => { setFavorites(product.id, false) }} /> : <HeartIcon onClick={() => { setFavorites(product.id, true) }} /> : <span>{' '}</span>}
                     <div><Mail /><Fb /><Instagram /><Twitter /></div>
                 </div>
                 <div className="product_item_material">Категории:  <span>{`${categoryNames[product.category]} / ${subCategoryNames[product.category][product.subCategory]}`}</span></div>
@@ -56,10 +57,12 @@ const ProductItem = ({ product, isProductsLoading }) => {
 ProductItem.propTypes = {
     isProductsLoading: PropTypes.bool.isRequired,
     product: PropTypes.instanceOf(Object),
+    user: PropTypes.instanceOf(Object),
 }
 
 ProductItem.defaultProps = {
     product: null,
+    user: null,
 }
 
 export default ProductItem;
