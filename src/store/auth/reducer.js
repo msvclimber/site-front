@@ -4,6 +4,7 @@ import {
   FETCH_LOGIN_FAIL,
   FETCH_LOGIN_ERROR,
   CLEAR_LOGIN_ERROR,
+  SET_FAVORITES,
 } from './constants';
 
 const initialState = {
@@ -36,6 +37,22 @@ const handlers = {
     ...state,
     isLoginError: false,
   }),
+  [SET_FAVORITES]: (state, { isFavorite, productId }) => {
+    const favors = new Set(state.user.favorites)
+    if (isFavorite) {
+      favors.add(productId);
+    } else {
+      favors.delete(productId);
+    }
+
+    return {
+      ...state,
+      user: {
+        ...state.user,
+        favorites: Array.from(favors),
+      },
+    }
+  },
 };
 
 const auth = (state = initialState, action) => {

@@ -4,6 +4,7 @@ import {
   FETCH_LOGIN_FAIL,
   FETCH_LOGIN_ERROR,
   CLEAR_LOGIN_ERROR,
+  SET_FAVORITES,
 } from './constants';
 
 export const fetchLogin = (login, password) => ({
@@ -27,4 +28,10 @@ export const fetchLoginError = () => ({
 
 export const clearLoginError = () => ({
   type: CLEAR_LOGIN_ERROR,
+});
+
+export const setFavorites = (productId, isFavorite) => ({
+  type: SET_FAVORITES,
+  productId,
+  isFavorite,
 });

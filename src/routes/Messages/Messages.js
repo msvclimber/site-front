@@ -10,7 +10,7 @@ import './styles.scss';
 const Messages = () => {
     return (<div>
         <AppHeader />
-        <div className="favorites_title">Сообщения</div>
+        <div className="messages_title">Сообщения</div>
         <div className="work_img">
             <img src={work} />
         </div>

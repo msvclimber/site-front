@@ -10,7 +10,7 @@ import './styles.scss';
 const User = () => {
     return (<div>
         <AppHeader />
-        <div className="favorites_title">Настройки пользователя</div>
+        <div className="user_title">Настройки пользователя</div>
         <div className="work_img">
             <img src={work} />
         </div>

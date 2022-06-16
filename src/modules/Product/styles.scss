@@ -44,6 +44,12 @@
 }
 
 .product_hover_buttons {
+  width: 110px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product_hover_buttons_auth {
   width: 160px;
   display: flex;
   justify-content: space-between;

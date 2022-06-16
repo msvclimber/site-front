@@ -10,7 +10,7 @@ import './styles.scss';
 const MyShop = () => {
     return (<div>
         <AppHeader />
-        <div className="favorites_title">Мой магазин</div>
+        <div className="myshop_title">Мой магазин</div>
         <div className="work_img">
             <img src={work} />
         </div>

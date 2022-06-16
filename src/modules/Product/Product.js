@@ -9,7 +9,7 @@ import EyeIcon from '../../assets/icons/eye.svg';
 
 import './styles.scss';
 
-const Product = ({ product, width, marginBottom }) => {
+const Product = ({ product, width, marginBottom, user, setFavorites }) => {
 
     return (
         <div className='product_root' style={{ width, marginBottom }}>
@@ -17,10 +17,10 @@ const Product = ({ product, width, marginBottom }) => {
             <div className="product_title">{product.title}</div>
             <div className="product_price">{`₽ ${product.price}`}</div>
             <div className="product_hover">
-                <div className="product_hover_buttons">
+                <div className={user ? "product_hover_buttons_auth" : "product_hover_buttons"}>
                     <Link to='/messages'><BasketIcon /></Link>
                     <Link to={`/detail/${product.id}`}><EyeIcon /></Link>
-                    <Link to='/favorites'><SelectedHeartIcon /></Link>
+                    {user ? user.favorites?.includes(product.id) ? <SelectedHeartIcon onClick={() => { setFavorites(product.id, false) }} /> : <HeartIcon onClick={() => { setFavorites(product.id, true) }} /> : null}
                 </div>
             </div>
         </div>
@@ -31,10 +31,13 @@ Product.propTypes = {
     product: PropTypes.instanceOf(Object).isRequired,
     width: PropTypes.string.isRequired,
     marginBottom: PropTypes.string,
+    user: PropTypes.instanceOf(Object),
+    setFavorites: PropTypes.func.isRequired,
 }
 
 Product.defaultProps = {
     marginBottom: '0px',
+    user: null,
 }
 
 export default Product;
