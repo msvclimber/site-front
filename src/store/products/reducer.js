@@ -3,11 +3,17 @@ import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_FAIL,
   CLEAR_PRODUCTS,
+  FETCH_SHOP,
+  FETCH_SHOP_SUCCESS,
+  FETCH_SHOP_FAIL,
+  CLEAR_SHOP,
 } from './constants';
 
 const initialState = {
   productList: [],
   isProductListLoading: false,
+  shop: null,
+  isShopLoading: false,
 };
 
 const handlers = {
@@ -29,6 +35,24 @@ const handlers = {
     ...state,
     productList: [],
     isProductListLoading: false,
+  }),
+  [FETCH_SHOP]: state => ({
+    ...state,
+    shop: [],
+    isShopLoading: true,
+  }),
+  [FETCH_SHOP_SUCCESS]: (state, { shop }) => ({
+    ...state,
+    shop,
+    isShopLoading: false,
+  }),
+  [FETCH_SHOP_FAIL]: state => ({
+    ...state,
+    isShopLoading: false,
+  }),
+  [CLEAR_SHOP]: state => ({
+    ...state,
+    shop: null,
   }),
 };
 

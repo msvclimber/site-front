@@ -6,9 +6,9 @@ import Product from '../Product';
 
 import './styles.scss';
 
-const ProductList = ({ title, products }) => {
+const ProductList = ({ title, products, margin }) => {
     return (
-        <div className="product_list_root">
+        <div className="product_list_root" style={{ margin }}>
             <div className="product_list_header">
                 <div className='product_list_title'>{title}</div>
                 <Link to='/list' className='product_list_viewall'>Смотреть полностью</Link>
@@ -23,6 +23,7 @@ const ProductList = ({ title, products }) => {
 ProductList.propTypes = {
     title: PropTypes.string.isRequired,
     products: PropTypes.instanceOf(Array).isRequired,
+    margin: PropTypes.string.isRequired,
 }
 
 export default ProductList;

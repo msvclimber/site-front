@@ -5,9 +5,11 @@ import apiCall from '../apiCall';
 import {
   fetchProductsSuccess,
   fetchProductsFail,
+  fetchShopSuccess,
+  fetchShopFail,
 } from '../../store/products/actions';
 
-import fetchProductsRequest from './fetchers';
+import { fetchProductsRequest, fetchShopRequest} from './fetchers';
 
 function* fetchProducts() {
   try {
@@ -26,5 +28,21 @@ function* fetchProducts() {
   }
 }
 
+function* fetchShop({ shopId }) {
+  try {
+    const { data, error } = yield call(apiCall, fetchShopRequest, { shopId });
 
-export default fetchProducts;
+    if (data) {
+      const { result } = data;
+      yield put(fetchShopSuccess(result));
+    }
+
+    if (error) {
+      yield put(fetchShopFail());
+    }
+  } catch {
+    yield put(fetchShopFail());
+  }
+}
+
+export { fetchProducts, fetchShop };

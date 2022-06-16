@@ -5,6 +5,7 @@ export default [
     city: "г. Ульяновск",
     phone: "+7 943 375 12 45",
     categories: ['clothingShoes', 'childrenThings'],
+    imgName: 'things',
   },
   {
     id: 2,
@@ -13,6 +14,7 @@ export default [
     city: "г. Ульяновск",
     phone: "+7 943 375 12 45",
     categories: ['clothingShoes', 'jewelryAccessories', 'childrenThings'],
+    imgName: 'hot',
   },
   {
     id: 3,
@@ -20,5 +22,6 @@ export default [
     city: "г. Сочи",
     phone: "+7 943 375 12 45",
     categories: ['interior'],
+    imgName: 'fff'
   },
 ];

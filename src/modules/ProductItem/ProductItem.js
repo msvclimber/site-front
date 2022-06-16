@@ -42,13 +42,13 @@ const ProductItem = ({ product, isProductsLoading, setFavorites, user }) => {
                 {product.colors.length > 0 ? <div className="product_item_colors">Цвет: {product.colors.map(color => (<div className='product_item_color' style={{ backgroundColor: color }}></div>))}</div> : null}
                 <div className="product_item_links">
                     <Link to='/messages'><div className="product_item_write">Написать продавцу</div></Link>
-                    <Link to='/shop'><div className="product_item_inshop">Перейти в магазин</div></Link>
+                    <Link to={`/shop/${product.shopId}`}><div className="product_item_inshop">Перейти в магазин</div></Link>
                 </div>
                 <div className="product_item_socials">
                     {user ? user.favorites?.includes(product.id) ? <SelectedHeartIcon onClick={() => { setFavorites(product.id, false) }} /> : <HeartIcon onClick={() => { setFavorites(product.id, true) }} /> : <span>{' '}</span>}
                     <div><Mail /><Fb /><Instagram /><Twitter /></div>
                 </div>
-                <div className="product_item_material">Категории:  <span>{`${categoryNames[product.category]} / ${subCategoryNames[product.category][product.subCategory]}`}</span></div>
+                <div className="product_item_material">Категории:  <span>{subCategoryNames[product.category] ? `${categoryNames[product.category]} / ${subCategoryNames[product.category][product.subCategory]}` : categoryNames[product.category]}</span></div>
             </div>
         </div>
     )

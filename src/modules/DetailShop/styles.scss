@@ -1,6 +1,28 @@
-.favorites_root {
-  margin: 10px 94px;
+.detail_shop_root {
+  margin: 30px 94px;
+
+  .detail_shop_root_img {
+    width: 268px;
+    height: 335px;
+    border-radius: 4px;
+  }
+}
+
+.detail_shop_info {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+}
+
+.detail_shop_write {
+  color: white;
+  background-color: #a18a68;
+  height: 53px;
+  width: 421px;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }

@@ -51,8 +51,8 @@ const Main = ({ products, isProductsLoading }) => {
             autoPlay
             style={{ position: 'relative', margin: '40px 80px 14px 80px', borderRadius: 23 }}
         />
-        <ProductList title="Одежда и обувь" products={clothingShoes} />
-        <ProductList title="Украшения и аксессуары" products={jewelryAccessories} />
+        <ProductList title="Одежда и обувь" products={clothingShoes} margin="86px 80px 0 80px" />
+        <ProductList title="Украшения и аксессуары" products={jewelryAccessories} margin="86px 80px 0 80px" />
         <AppFooter />
     </div>)
 }

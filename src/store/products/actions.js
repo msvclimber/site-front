@@ -6,6 +6,7 @@ import {
   FETCH_SHOP,
   FETCH_SHOP_SUCCESS,
   FETCH_SHOP_FAIL,
+  CLEAR_SHOP,
 } from './constants';
 
 export const fetchProducts = () => ({
@@ -37,4 +38,8 @@ export const fetchShopSuccess = shop => ({
 
 export const fetchShopFail = () => ({
   type: FETCH_SHOP_FAIL,
+});
+
+export const clearShop = () => ({
+  type: CLEAR_SHOP,
 });

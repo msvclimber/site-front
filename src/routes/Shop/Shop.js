@@ -9,7 +9,7 @@ const Shop = () => {
     const { shopId } = useParams();
     return (<div>
         <AppHeader />
-        <DetailShop shopId={shopId} />
+        <DetailShop shopId={+shopId} />
         <AppFooter isBottomAbsolute />
     </div>)
 }
