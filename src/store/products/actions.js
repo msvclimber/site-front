@@ -7,6 +7,7 @@ import {
   FETCH_SHOP_SUCCESS,
   FETCH_SHOP_FAIL,
   CLEAR_SHOP,
+  DELETE_PRODUCT,
 } from './constants';
 
 export const fetchProducts = () => ({
@@ -42,4 +43,9 @@ export const fetchShopFail = () => ({
 
 export const clearShop = () => ({
   type: CLEAR_SHOP,
+});
+
+export const deleteProduct = productId => ({
+  type: DELETE_PRODUCT,
+  productId,
 });

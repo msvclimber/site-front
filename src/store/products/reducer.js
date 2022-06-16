@@ -7,6 +7,7 @@ import {
   FETCH_SHOP_SUCCESS,
   FETCH_SHOP_FAIL,
   CLEAR_SHOP,
+  DELETE_PRODUCT,
 } from './constants';
 
 const initialState = {
@@ -53,6 +54,10 @@ const handlers = {
   [CLEAR_SHOP]: state => ({
     ...state,
     shop: null,
+  }),
+  [DELETE_PRODUCT]: (state, { productId }) => ({
+    ...state,
+    productList: state.productList.filter(pr => pr.id !== productId),
   }),
 };
 

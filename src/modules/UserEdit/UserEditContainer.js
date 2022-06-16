@@ -1,29 +1,24 @@
 import { connect } from 'react-redux';
 
 import {
-    setFavorites,
-} from '../../store/auth/actions';
-
-import {
-    deleteProduct,
-} from '../../store/products/actions';
-
-import {
     getUser,
 } from '../../store/auth/selectors';
 
-import Product from './Product';
+import {
+    logout,
+} from '../../store/auth/actions';
+
+import UserEdit from './UserEdit';
 
 const mapStateToProps = state => ({
     user: getUser(state),
 });
 
 const mapDispatchToProps = {
-    setFavorites,
-    deleteProduct,
+    logout
 }
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
-)(Product);
+    mapDispatchToProps
+)(UserEdit);

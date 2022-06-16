@@ -5,6 +5,7 @@ import {
   FETCH_LOGIN_ERROR,
   CLEAR_LOGIN_ERROR,
   SET_FAVORITES,
+  LOGOUT,
 } from './constants';
 
 const initialState = {
@@ -53,6 +54,10 @@ const handlers = {
       },
     }
   },
+  [LOGOUT]: state => ({
+    ...state,
+    user: null,
+  }),
 };
 
 const auth = (state = initialState, action) => {

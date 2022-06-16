@@ -5,3 +5,5 @@ export const FETCH_LOGIN_ERROR = 'FETCH_LOGIN_ERROR';
 export const CLEAR_LOGIN_ERROR = 'CLEAR_LOGIN_ERROR';
 
 export const SET_FAVORITES = 'SET_FAVORITES';
+
+export const LOGOUT = 'LOGOUT';

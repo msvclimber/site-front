@@ -64,7 +64,7 @@ const DetailShop = ({ user, products, isProductsLoading, shopId, isOwner, fetchS
                 </div>
                 <div style={{ display: 'inline-block', width: '20%' }}>{shop.city}</div>
             </div>
-            {productCatalog.map(pCatalog => (<ProductList margin="66px 0 0 0" key={pCatalog.code} title={pCatalog.name} products={pCatalog.products.slice(0, 4)} />))}
+            {productCatalog.map(pCatalog => (<ProductList isEdit={isOwner} margin="66px 0 0 0" key={pCatalog.code} title={pCatalog.name} products={pCatalog.products.slice(0, 4)} />))}
         </div>
     )
 }

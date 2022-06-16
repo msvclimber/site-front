@@ -70,3 +70,26 @@
   align-items: center;
   border-radius: 4px;
 }
+
+.product_edit {
+  width: 62px;
+  height: 26px;
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    width: 26px;
+    height: 26px;
+    background-color: #272727;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}

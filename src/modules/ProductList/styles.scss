@@ -28,3 +28,21 @@
   display: flex;
   justify-content: space-between;
 }
+
+.product_list_add {
+  color: white;
+  background-color: #a18a68;
+  height: 53px;
+  width: 389px;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    margin-right: 21px;
+  }
+}
