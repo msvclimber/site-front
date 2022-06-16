@@ -4,16 +4,14 @@ import work from '../../assets/images/razrabotka.jpg';
 
 import AppHeader from '../../modules/AppHeader';
 import AppFooter from '../../modules/AppFooter';
+import MessageList from '../../modules/MessageList';
 
 import './styles.scss';
 
 const Messages = () => {
     return (<div>
         <AppHeader />
-        <div className="messages_title">Сообщения</div>
-        <div className="work_img">
-            <img src={work} />
-        </div>
+        <MessageList />
         <AppFooter isBottomAbsolute />
     </div>)
 }

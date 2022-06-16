@@ -18,11 +18,12 @@ const Product = ({ product, width, marginBottom, user, setFavorites }) => {
             <div className="product_price">{`₽ ${product.price}`}</div>
             <div className="product_hover">
                 <div className={user ? "product_hover_buttons_auth" : "product_hover_buttons"}>
-                    <Link to='/messages'><BasketIcon /></Link>
+                    <Link to={`/messages`}><BasketIcon /></Link>
                     <Link to={`/detail/${product.id}`}><EyeIcon /></Link>
-                    {user ? user.favorites?.includes(product.id) ? <SelectedHeartIcon onClick={() => { setFavorites(product.id, false) }} /> : <HeartIcon onClick={() => { setFavorites(product.id, true) }} /> : null}
+                    {user ? user.favorites?.includes(product.id) ? <SelectedHeartIcon style={{ cursor: 'pointer' }} onClick={() => { setFavorites(product.id, false) }} /> : <HeartIcon style={{ cursor: 'pointer' }} onClick={() => { setFavorites(product.id, true) }} /> : null}
                 </div>
             </div>
+            {product.sales ? <div className='product_sales'>{`-${product.sales}`}</div> : null}
         </div>
     )
 }

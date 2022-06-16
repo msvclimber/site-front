@@ -37,6 +37,7 @@
   right: 0;
   height: 82.5%;
   background-color: rgba($color: white, $alpha: 0.6);
+  z-index: 2;
 
   svg {
     fill: red;
@@ -53,4 +54,19 @@
   width: 160px;
   display: flex;
   justify-content: space-between;
+}
+
+.product_sales {
+  width: 60px;
+  height: 30px;
+  margin: 10px;
+  background-color: #a18a68;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
 }
