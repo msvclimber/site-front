@@ -1,3 +1,3 @@
-import MyShop from './MyShop';
+import MyShop from './MyShopContainer';
 
 export default MyShop;

@@ -9,6 +9,7 @@ import Auth from '../Auth';
 import Messages from '../Messages';
 import LostPass from '../LostPass';
 import DetailProduct from '../DetailProduct';
+import Shop from '../Shop';
 import MyShop from '../MyShop';
 import User from '../User';
 import Work from '../Work';
@@ -57,6 +58,11 @@ const App = () => (
         exact
         path="/myshop"
         element={<PrivateRoute component={MyShop} isLogin />}
+      />
+      <Route
+        exact
+        path="/shop/:shopId"
+        element={<PrivateRoute component={Shop} />}
       />
       <Route
         exact

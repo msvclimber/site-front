@@ -1,21 +1,25 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import work from '../../assets/images/razrabotka.jpg';
+import PropTypes from 'prop-types';
 
 import AppHeader from '../../modules/AppHeader';
 import AppFooter from '../../modules/AppFooter';
+import DetailShop from '../../modules/DetailShop';
 
-import './styles.scss';
-
-const MyShop = () => {
+const MyShop = ({ user }) => {
+    const { shopId } = user;
     return (<div>
         <AppHeader />
-        <div className="myshop_title">Мой магазин</div>
-        <div className="work_img">
-            <img src={work} />
-        </div>
+        <DetailShop shopId={shopId} isOwner />
         <AppFooter isBottomAbsolute />
     </div>)
+}
+
+MyShop.propTypes = {
+    user: PropTypes.instanceOf(Object),
+};
+
+MyShop.defaultProps = {
+    user: null,
 }
 
 export default MyShop;

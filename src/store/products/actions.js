@@ -3,6 +3,9 @@ import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_FAIL,
   CLEAR_PRODUCTS,
+  FETCH_SHOP,
+  FETCH_SHOP_SUCCESS,
+  FETCH_SHOP_FAIL,
 } from './constants';
 
 export const fetchProducts = () => ({
@@ -20,4 +23,18 @@ export const fetchProductsFail = () => ({
 
 export const clearProducts = () => ({
   type: CLEAR_PRODUCTS,
+});
+
+export const fetchShop = shopId => ({
+  type: FETCH_SHOP,
+  shopId,
+});
+
+export const fetchShopSuccess = shop => ({
+  type: FETCH_SHOP_SUCCESS,
+  shop,
+});
+
+export const fetchShopFail = () => ({
+  type: FETCH_SHOP_FAIL,
 });

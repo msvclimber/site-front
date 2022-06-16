@@ -20,7 +20,7 @@ export default [
     login: "qwerty",
     name: "Вася пупкин",
     password: "qwerty",
-    shopId: 1,
+    shopId: 3,
     favorites: [1, 2, 3, 6, 8],
   },
 ];

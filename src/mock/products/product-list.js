@@ -12,6 +12,7 @@ export default {
     result: [
         {
             id: 1,
+            shopId: 1,
             title: 'Вязанные носки',
             price: 500,
             category: 'clothingShoes',
@@ -25,6 +26,7 @@ export default {
         },
         {
             id: 2,
+            shopId: 1,
             title: 'Вязанные свитер',
             price: 2500,
             category: 'clothingShoes',
@@ -39,6 +41,7 @@ export default {
         },
         {
             id: 3,
+            shopId: 1,
             title: 'Вязанная шапка',
             price: 500,
             category: 'clothingShoes',
@@ -52,6 +55,7 @@ export default {
         },
         {
             id: 4,
+            shopId: 2,
             title: 'Пончо ручной вязки',
             price: 500,
             category: 'clothingShoes',
@@ -65,6 +69,7 @@ export default {
         },
         {
             id: 5,
+            shopId: 2,
             title: 'Серьги из натуральных камней',
             price: 5000,
             category: 'jewelryAccessories',
@@ -78,6 +83,7 @@ export default {
         },
         {
             id: 6,
+            shopId: 2,
             title: 'Ожерелье',
             price: 970,
             category: 'jewelryAccessories',
@@ -91,6 +97,7 @@ export default {
         },
         {
             id: 7,
+            shopId: 2,
             title: 'Бусы из жемчуга',
             price: 2560,
             category: 'jewelryAccessories',
@@ -104,6 +111,7 @@ export default {
         },
         {
             id: 8,
+            shopId: 2,
             title: 'Серьги',
             price: 1800,
             category: 'jewelryAccessories',

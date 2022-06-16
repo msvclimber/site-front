@@ -10,9 +10,7 @@ import page404 from '../../assets/images/404.jpg';
 
 import './styles.scss';
 
-const Favorites = ({ user, products, isProductsLoading }) => {
-    const productsObject = useMemo(() => products ? Object.fromEntries(products.map(product => ([product.id, product]))) : {}, [products]);
-
+const DetailShop = ({ user, products, isProductsLoading, shopId, isOwner }) => {
     if(user === null) {
         return null;
     }
@@ -29,22 +27,29 @@ const Favorites = ({ user, products, isProductsLoading }) => {
         </div>
     }
 
+    // const productsObject = useMemo(() => {
+    //     const shopProduct = 
+    //  } : {}, [products]);
+
     return (
         <div className='favorites_root'>
-            {user.favorites.map(productId => (<Product key={productId} product={productsObject[productId]} width="22%" marginBottom="40px" />))}
+            {products.map(product => (<Product key={product.id} product={product} width="22%" marginBottom="40px" />))}
         </div>
     )
 }
 
-Favorites.propTypes = {
+DetailShop.propTypes = {
     user: PropTypes.instanceOf(Object),
     isProductsLoading: PropTypes.bool.isRequired,
     products: PropTypes.instanceOf(Object),
+    shopId: PropTypes.string.isRequired,
+    isOwner: PropTypes.bool,
 }
 
-Favorites.defaultProps = {
+DetailShop.defaultProps = {
     user: null,
     products: null,
+    isOwner: false,
 }
 
-export default Favorites;
+export default DetailShop;
