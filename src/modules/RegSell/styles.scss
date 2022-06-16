@@ -5,3 +5,23 @@
   flex-wrap: wrap;
   margin: 0 auto;
 }
+
+.reg_sell_info {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reg_sell_signup {
+  color: white;
+  background-color: #dbd3c5;
+  height: 53px;
+  width: 317px;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

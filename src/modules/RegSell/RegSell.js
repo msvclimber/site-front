@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
+import TextField from '@mui/material/TextField';
 
 import './styles.scss';
 
 const RegSell = ({ user, logout }) => {
-    if (user === null) {
-        return null;
-    }
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [description, setDescription] = useState('');
 
     return (
         <div className='user_edit_root'>
@@ -16,15 +20,53 @@ const RegSell = ({ user, logout }) => {
                     <div className='user_edit_photo_place'>
                         <div className='user_edit_photo_border'></div>
                     </div>
-                    <span>Изображение размером 120x148px весом не более 25мб.</span>
-                    <div className="user_edit_exit" onClick={logout}>Выйти</div>
                 </div>
-                <div className='user_edit_personal'>Личные данные<div style={{ backgroundColor: '#efefef', width: 600, height: 300 }} /></div>
             </div>
-            <div className='user_edit_password'>Сменить пароль<div style={{ backgroundColor: '#efefef', width: 500, height: 100 }} /></div>
-            <div className='user_edit_myshop'>
-                Мой магазин
-                <Link to={'/shop/create'} style={{ textDecoration: 'none' }}><div className="user_edit_create">Создать магазин</div></Link>
+            <div className='reg_sell_info'>
+                <TextField
+                    label="Название"
+                    variant="standard"
+                    className='reg_buy_buttons_textfield'
+                    value={name}
+                    onChange={({ target: { value } }) => {
+                        setName(value);
+                    }}
+                />
+                <TextField
+                    label="Страна"
+                    variant="standard"
+                    className='reg_buy_buttons_textfield'
+                    value={surname}
+                    onChange={({ target: { value } }) => {
+                        setSurname(value);
+                    }} />
+                <TextField
+                    label="Город"
+                    variant="standard"
+                    className='reg_buy_buttons_textfield'
+                    value={email}
+                    onChange={({ target: { value } }) => {
+                        setEmail(value);
+                    }}
+                />
+                <TextField
+                    label="Телефон"
+                    variant="standard"
+                    className='reg_buy_buttons_textfield'
+                    value={password}
+                    onChange={({ target: { value } }) => {
+                        setPassword(value);
+                    }} />
+                <TextField
+                    label="Описание"
+                    multiline
+                    rows={4}
+                    className='reg_buy_buttons_textfield'
+                    value={description}
+                    onChange={({ target: { value } }) => {
+                        setDescription(value);
+                    }} />
+                <div className="reg_sell_signup">Зарегистрироваться</div>
             </div>
         </div>
     )
