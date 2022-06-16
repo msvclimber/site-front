@@ -12,7 +12,7 @@ const ProductList = ({ title, products, margin, isEdit }) => {
         <div className="product_list_root" style={{ margin }}>
             <div className="product_list_header">
                 <div className='product_list_title'>{title}</div>
-                {isEdit ? <Link to={'/product/add'} style={{ textDecoration: 'none' }}><div className="product_list_add"><AddProductIcon /> Добавить новый товар</div></Link>
+                {isEdit ? <Link to='/work' style={{ textDecoration: 'none' }}><div className="product_list_add"><AddProductIcon /> Добавить новый товар</div></Link>
                     : <Link to='/list' className='product_list_viewall'>Смотреть полностью</Link>}
             </div>
             <div className="product_list_products">

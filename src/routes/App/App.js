@@ -13,6 +13,8 @@ import Shop from '../Shop';
 import MyShop from '../MyShop';
 import User from '../User';
 import Work from '../Work';
+import RegBuy from '../RegBuy';
+import RegSell from '../RegSell';
 
 import './styles.scss';
 
@@ -68,6 +70,16 @@ const App = () => (
         exact
         path="/user/:id"
         element={<PrivateRoute component={User} isLogin />}
+      />
+      <Route
+        exact
+        path="/reg/buy"
+        element={<PrivateRoute component={RegBuy} />}
+      />
+      <Route
+        exact
+        path="/reg/sell"
+        element={<PrivateRoute component={RegSell} />}
       />
       <Route
         exact

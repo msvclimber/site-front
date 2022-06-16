@@ -12,13 +12,14 @@ import {
     useNavigate,
 } from "react-router-dom";
 
+import RegIcon from '../../../assets/icons/reg.svg';
+import RegSelectIcon from '../../../assets/icons/regselect.svg';
+
 import '../styles.scss';
 
 const stages = {
     login: 'login',
     signup: 'signup',
-    regBuy: 'regBuy',
-    regSell: 'regSell',
 }
 
 const Login = ({ changeStage, fetchLogin, isLoginError, clearLoginError, isLoging, redirectPage, user }) => {
@@ -26,6 +27,7 @@ const Login = ({ changeStage, fetchLogin, isLoginError, clearLoginError, isLogin
     const [action, setAction] = useState(stages.login);
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
+    const [regType, setRegType] = useState(null);
     const selectLogin = cn({
         auth_login_buttons_selected: Boolean(action === stages.login)
     });
@@ -49,8 +51,8 @@ const Login = ({ changeStage, fetchLogin, isLoginError, clearLoginError, isLogin
         <div className="auth_login_root">
             <h1>Мой аккаунт</h1>
             <div className="auth_login_buttons">
-                <div className={selectLogin} onClick={() => setAction(stages.login)}>Войти</div>
-                <div className={selectSignup} onClick={() => setAction(stages.signup)}>Зарегистрироваться</div>
+                <div className={selectLogin} onClick={() => { setAction(stages.login); setRegType(null) }}>Войти</div>
+                <div className={selectSignup} onClick={() => { setAction(stages.signup); setLogin(''); setPassword('') }}>Зарегистрироваться</div>
             </div>
             {
                 action === stages.login ? (<div>
@@ -98,11 +100,23 @@ const Login = ({ changeStage, fetchLogin, isLoginError, clearLoginError, isLogin
                     <Link to='/lostpass' className='auth_login_buttons_button_lost'>Забыли пароль?</Link>
                 </div>
                 ) : (<div>
-                    <div onClick={() => setAction(stages.regBuy)}>Купить</div>
-                    <div onClick={() => setAction(stages.regSell)}>Продать</div>
+                    <div onClick={() => setRegType('buy')} className={regType === 'buy' ? "reg_buy reg_select" : "reg_buy"}>
+                        {regType === 'buy' ? <RegSelectIcon /> : <RegIcon />}<div className='reg_button_title'>
+                            <div>Купить</div>
+                            <span>Зарегистрироваться как покупатель</span>
+                        </div>
+                    </div>
+                    <div onClick={() => setRegType('sell')} className={regType === 'sell' ? "reg_sell reg_select" : "reg_sell"}>
+                        {regType === 'sell' ? <RegSelectIcon /> : <RegIcon />}<div className='reg_button_title'>
+                            <div>Продать</div>
+                            <span>Зарегистрироваться как продавец</span>
+                        </div>
+                    </div>
+                    {regType === null ? <div className={"reg_sell_next_disable"}>Далее</div> : <Link to={`/reg/${regType}`} style={{ textDecoration: 'none' }}><div className={"reg_sell_next"}>Далее</div></Link>}
+                    <div className='reg_sell_have_accaunt'>Есть аккаунт? <span style={{ color: '#A16A68', marginLeft: 6, cursor: 'pointer' }} onClick={() => { setAction(stages.login); setRegType(null) }}>Войти</span></div>
                 </div>)
             }
-        </div>
+        </div >
     )
 }
 

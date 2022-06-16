@@ -8,6 +8,10 @@ import ProductList from '../ProductList';
 import { categoryNames } from '../../data/categories';
 
 import page404 from '../../assets/images/404.jpg';
+import LocationIcon from '../../assets/icons/location.svg';
+import PhoneIcon from '../../assets/icons/phone.svg';
+import Instagram2Icon from '../../assets/icons/instagram2.svg';
+import VkIcon from '../../assets/icons/vk.svg';
 
 import './styles.scss';
 
@@ -60,9 +64,13 @@ const DetailShop = ({ user, products, isProductsLoading, shopId, isOwner, fetchS
                 <div style={{ display: 'inline-block', width: '55%', margin: '0 30px' }}>
                     <span style={{ display: 'block', fontSize: '36px', fontWeight: '600', marginBottom: 30 }}>{shop.title}</span>
                     <span>{shop.description}</span>
-                    <Link to={user ? '/messages' : '/auth/messages'} style={{ textDecoration: 'none' }}><div className="detail_shop_write">Написать продавцу</div></Link>
+                    {!isOwner ? <Link to={user ? '/messages' : '/auth/messages'} style={{ textDecoration: 'none' }}><div className="detail_shop_write">Написать продавцу</div></Link> : null}
                 </div>
-                <div style={{ display: 'inline-block', width: '20%' }}>{shop.city}</div>
+                <div style={{ display: 'inline-block', width: '20%' }}>
+                    <div style={{ height: 36, display: 'flex', alignItems: 'center' }}><LocationIcon style={{ marginRight: 10 }} />{shop.city}</div>
+                    <div style={{ height: 36, display: 'flex', alignItems: 'center' }}><PhoneIcon style={{ marginRight: 10 }} />{shop.phone}</div>
+                    <div style={{ height: 36, display: 'flex', alignItems: 'center' }}><Instagram2Icon style={{ marginRight: 10, marginLeft: -5 }} /><VkIcon /></div>
+                </div>
             </div>
             {productCatalog.map(pCatalog => (<ProductList isEdit={isOwner} margin="66px 0 0 0" key={pCatalog.code} title={pCatalog.name} products={pCatalog.products.slice(0, 4)} />))}
         </div>

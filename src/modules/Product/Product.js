@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Modal from '@mui/material/Modal';
+// import Modal from '@mui/material/Modal';
 
 import HeartIcon from '../../assets/icons/heart.svg';
 import SelectedHeartIcon from '../../assets/icons/selectedHeart.svg';
 import BasketIcon from '../../assets/icons/basket.svg';
 import EyeIcon from '../../assets/icons/eye.svg';
-import EditIcon from '../../assets/icons/edit.svg';
-import DeleteIcon from '../../assets/icons/delete.svg';
+// import EditIcon from '../../assets/icons/edit.svg';
+// import DeleteIcon from '../../assets/icons/delete.svg';
 
 import './styles.scss';
 
 const Product = ({ product, width, marginBottom, user, setFavorites, isEdit, deleteProduct }) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const handleOpen = () => setIsModalOpen(true);
-    const handleClose = () => setIsModalOpen(false);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
+    // const handleOpen = () => setIsModalOpen(true);
+    // const handleClose = () => setIsModalOpen(false);
 
     return (
         <div className='product_root' style={{ width, marginBottom }}>
@@ -31,12 +31,13 @@ const Product = ({ product, width, marginBottom, user, setFavorites, isEdit, del
                 </div>
             </div> : null}
             {product.sales ? <div className='product_sales'>{`-${product.sales}`}</div> : null}
-            {isEdit ? <div className='product_edit'>
+            {/* {isEdit ? <div className='product_edit'>
                 <div onClick={handleOpen}><DeleteIcon /></div>
-                <Link style={{ textDecoration: 'none', marginTop: '3px' }} to={`/product/edit/${product.id}`}><div><EditIcon /></div></Link>
+                // {/* <Link style={{ textDecoration: 'none', marginTop: '3px' }} to={`/product/edit/${product.id}`}><div><EditIcon /></div></Link>
+                <Link style={{ textDecoration: 'none', marginTop: '3px' }} to='/work'><div><EditIcon /></div></Link>
             </div> : null
-            }
-            <Modal
+            } */}
+            {/* <Modal
                 open={isModalOpen}
                 onClose={handleClose}
             >
@@ -55,7 +56,7 @@ const Product = ({ product, width, marginBottom, user, setFavorites, isEdit, del
                         <div className="product_item_inshop" onClick={handleClose}>Отмена</div>
                     </div>
                 </div>
-            </Modal>
+            </Modal> */}
         </div >
     )
 }
